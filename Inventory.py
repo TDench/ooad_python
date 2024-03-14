@@ -1,4 +1,4 @@
-import Guitar
+from Guitar import Guitar
 
 
 class Inventory:
@@ -13,7 +13,7 @@ class Inventory:
         for guitar in self.guitars:
             if guitar.get_manufacturer() != guitar_input.get_manufacturer():
                 continue
-            if guitar.get_back_material != guitar_input.get_back_material():
+            if guitar.get_back_material() != guitar_input.get_back_material():
                 continue
             result.append(guitar)
         return result
