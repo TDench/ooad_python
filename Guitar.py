@@ -1,15 +1,15 @@
 class Guitar:
-    def __init__(self, price, number, manufacturer, back_material):
+    def __init__(self, price, id, manufacturer, back_material):
         self.price = price
-        self.number = number
+        self.id = id
         self.manufacturer = manufacturer
         self.back_material = back_material
 
     def get_price(self):
         return self.price
 
-    def get_number(self):
-        return self.number
+    def get_id(self):
+        return self.id
 
     def get_manufacturer(self):
         return self.manufacturer

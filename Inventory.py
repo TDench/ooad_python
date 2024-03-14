@@ -8,6 +8,12 @@ class Inventory:
     def addGuitar(self, guitar):
         self.guitars.append(guitar)
 
+    def get_guitar(self, id):
+        for guitar in self.guitars:
+            if id == guitar.get_id():
+                return guitar
+        return None
+
     def search(self, guitar_input: Guitar):
         result = []
         for guitar in self.guitars:
