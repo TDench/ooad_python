@@ -18,9 +18,6 @@ class Inventory:
         result = []
         for guitar in self.guitars:
             guitar_spec = guitar.get_spec()
-            if guitar_spec.get_manufacturer() != wanted_spec.get_manufacturer():
-                continue
-            if guitar_spec.get_back_material() != wanted_spec.get_back_material():
-                continue
-            result.append(guitar)
+            if guitar_spec.matches(wanted_spec):
+                result.append(guitar)
         return result
