@@ -6,7 +6,7 @@ from Guitar import Guitar, GuitarSpec
 
 def test_add_guitar():
     inventory = Inventory()
-    guitar = Guitar(1000, "G-001", GuitarSpec("Gibson", "Rosewood"))
+    guitar = Guitar(1000, "G-001", GuitarSpec("Gibson", "Rosewood", None))
     inventory.addGuitar(guitar)
     assert len(inventory.guitars) == 1
     assert inventory.guitars[0] == guitar

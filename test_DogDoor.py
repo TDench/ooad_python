@@ -9,3 +9,7 @@ def test_add_guitar():
     assert remote.door.isOpen() == True
     remote.press_button()
     assert remote.door.isOpen() == False
+
+
+if __name__ == "__main__":
+    pytest.main()
