@@ -6,7 +6,6 @@ class DogDoor:
         print("Door is open")
         self.__open = True
 
-
     def close(self):
         print("Door is closed")
         self.__open = False

@@ -21,4 +21,3 @@ class Remote:
         time.sleep(3)
         print("autoclose door")
         self.door.close()
-        
