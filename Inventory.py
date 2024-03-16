@@ -1,4 +1,4 @@
-from Guitar import Guitar
+from Guitar import GuitarSpec
 
 
 class Inventory:
@@ -14,12 +14,13 @@ class Inventory:
                 return guitar
         return None
 
-    def search(self, guitar_input: Guitar):
+    def search(self, wanted_spec:GuitarSpec):
         result = []
         for guitar in self.guitars:
-            if guitar.get_manufacturer() != guitar_input.get_manufacturer():
+            guitar_spec = guitar.get_spec()
+            if guitar_spec.get_manufacturer() != wanted_spec.get_manufacturer():
                 continue
-            if guitar.get_back_material() != guitar_input.get_back_material():
+            if guitar_spec.get_back_material() != wanted_spec.get_back_material():
                 continue
             result.append(guitar)
         return result
