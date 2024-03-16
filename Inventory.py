@@ -14,7 +14,7 @@ class Inventory:
                 return guitar
         return None
 
-    def search(self, wanted_spec:GuitarSpec):
+    def search(self, wanted_spec: GuitarSpec):
         result = []
         for guitar in self.guitars:
             guitar_spec = guitar.get_spec()
