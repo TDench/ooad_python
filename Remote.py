@@ -1,4 +1,6 @@
 from DogDoor import DogDoor
+import time
+import threading
 
 
 class Remote:
@@ -12,3 +14,11 @@ class Remote:
             self.door.close()
         else:
             self.door.open()
+            threading.Thread(target=self.auto_close).start()
+
+    def auto_close(self):
+        print("start audo close")
+        time.sleep(3)
+        print("autoclose door")
+        self.door.close()
+        
