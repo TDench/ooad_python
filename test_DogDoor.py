@@ -40,7 +40,5 @@ def test_door_auto_close_and_open():
     assert door.isOpen() == False
 
 
-
-
 if __name__ == "__main__":
     pytest.main()

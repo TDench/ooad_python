@@ -1,5 +1,7 @@
 import time
 import threading
+
+
 class DogDoor:
     def __init__(self) -> None:
         self.__open = False
@@ -15,7 +17,7 @@ class DogDoor:
 
     def isOpen(self):
         return self.__open
-    
+
     def auto_close(self):
         print("start audo close")
         time.sleep(3)
