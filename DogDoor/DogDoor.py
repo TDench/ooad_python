@@ -20,6 +20,6 @@ class DogDoor:
 
     def auto_close(self):
         print("start audo close")
-        time.sleep(3)
+        time.sleep(1)
         print("autoclose door")
         self.close()
