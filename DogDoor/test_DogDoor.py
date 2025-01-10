@@ -1,7 +1,8 @@
 import pytest
-from Remote import Remote
-from DogDoor import DogDoor
-from BarkRecognizer import BarkRecognizer
+from .Remote import Remote
+from .DogDoor import DogDoor
+from .BarkRecognizer import BarkRecognizer
+from .Bark import Bark
 import time
 
 
@@ -34,20 +35,25 @@ def test_door_auto_close_and_open():
     time.sleep(1.1)
     assert door.isOpen() == False
 
-def test_bark_recognizer():
+
+def test_bark_recognizer_same():
     door = DogDoor()
-    remote = Remote(door)
-    bark = BarkRecognizer(door)
-    bark.set_allowed_bark("Woff")
-    bark.recognize("Woff")
+    bark = Bark("Woff")
+    door.set_allowed_bark(bark)
+    bark_recognizer = BarkRecognizer(door)
+    assert door.isOpen() == False
+    bark_recognizer.recognize(bark)
     assert door.isOpen() == True
 
-def test_bark_recognizer():
+
+def test_bark_recognizer_different():
     door = DogDoor()
-    remote = Remote(door)
-    bark = BarkRecognizer(door)
-    bark.set_allowed_bark("Woff")
-    bark.recognize("Wofffff")
+    bark = Bark("Woff")
+    bark_yip = Bark("Yipss")
+    door.set_allowed_bark(bark)
+    bark_recognizer = BarkRecognizer(door)
+    assert door.isOpen() == False
+    bark_recognizer.recognize(bark_yip)
     assert door.isOpen() == False
 
 
