@@ -6,7 +6,7 @@ from .Bark import Bark
 class DogDoor:
     def __init__(self) -> None:
         self.__open = False
-        self.__allowed_bark = None
+        self.__allowed_barks = []
 
     def open(self) -> None:
         print("Door is open")
@@ -27,7 +27,7 @@ class DogDoor:
         self.close()
 
     def set_allowed_bark(self, bark: Bark) -> None:
-        self.__allowed_bark = bark
+        self.__allowed_barks.append(bark)
 
-    def get_allowed_bark(self) -> Bark:
-        return self.__allowed_bark
+    def get_allowed_barks(self) -> Bark:
+        return self.__allowed_barks
